@@ -65,6 +65,22 @@ body {
   margin: 0px;
 }
 
+.border-hover {
+  padding: 5px;
+}
+
+.border-hover:hover {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+.selected {
+  background-color: rgba(255, 255, 0, 0.6);
+}
+
+.selected:hover {
+  background-color: rgba(255, 255, 0, 0.6);
+}
+
 /* RADIO WITH LABELS CSS */
 .radioWithLabelsContainer {
   display: flex;
@@ -114,6 +130,10 @@ body {
   height: 3em;
   outline: none;
   transition: all 100ms ease-in;
+}
+
+.date > input {
+  text-transform: capitalize;
 }
 
 .date:hover {
