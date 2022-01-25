@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import RadioLabels from "./Components/RadioLabels";
+import RadioSubComponent from "./Components/RadioSubComponent";
+import style from "./App.module.css";
+const App = () => {
+  const [selected, setSelected] = useState(1);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={style.container}>
+      <div className={style.radio_container}>
+        <div className={style.radio}>
+          <input
+            type="radio"
+            id="radio_label1"
+            value={1}
+            checked={selected === 1}
+            onChange={(e) => setSelected(Number(e.target.value))}
+          />
+          <label htmlFor="radio_label1">Radio With Label</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="radio_label2"
+            value={2}
+            checked={selected === 2}
+            onChange={(e) => setSelected(Number(e.target.value))}
+          />
+          <label htmlFor="radio_label2">Radio With Sub Component</label>
+        </div>
+      </div>
+      <div className={style.component}>
+        <div className={style.scrollable}>
+          {selected === 1 ? <RadioLabels /> : <RadioSubComponent />}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
