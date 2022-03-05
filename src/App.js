@@ -16,7 +16,7 @@ const App = () => {
             checked={selected === 1}
             onChange={(e) => setSelected(Number(e.target.value))}
           />
-          <label htmlFor="radio_label1">Radio With Label</label>
+          <label htmlFor="radio_label">Radio With Label</label>
         </div>
         <div>
           <input
