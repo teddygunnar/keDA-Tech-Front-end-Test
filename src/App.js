@@ -11,7 +11,7 @@ const App = () => {
         <div className={style.radio}>
           <input
             type="radio"
-            id="radio_label1"
+            id="radio_label"
             value={1}
             checked={selected === 1}
             onChange={(e) => setSelected(Number(e.target.value))}
